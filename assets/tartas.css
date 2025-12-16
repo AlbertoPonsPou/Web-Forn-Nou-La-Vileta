@@ -1,0 +1,480 @@
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+h1{
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 2.5em;
+  margin-top: 2%;
+  padding: 0;
+  font-family: 'Source Serif 4', serif;
+}
+
+p, a, li, h3, h2, button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+/*Menu nav header*/
+
+nav {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    z-index: 4;
+    background: transparent;
+    position: absolute;
+    width: 80%;
+    margin-left: 10%;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    padding-left: 0%;
+}
+
+nav li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding:  10px 20PX;
+    display: inline-block;
+    z-index: 0;
+    transition: 0.5s;
+    margin: 10px;
+}
+
+nav li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: orange;
+  transform: scaleY(0.1);         
+  transform-origin: top;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+nav li a:hover::before {
+  transform: scaleY(1);           
+}
+
+nav li a:hover {
+    color: black;
+    transition: 0.3s;
+}
+
+.logo{
+  display: flex;
+  width: 150px;
+}
+
+.redes {
+  width: 150px;
+  display: flex;
+  gap: 20px;
+}
+
+.redes img {
+  width: 35px;
+  height: 35px;
+  transition: 0.2s;
+}
+
+.redes img:hover {
+  transition: 0.2s;
+  filter: brightness(1.2);
+}
+
+/* Comportamiento móvil */
+@media (max-width: 1200px) {
+
+  /* El nav ahora ocupa el 100% para que el menú baje desde arriba del todo */
+  nav {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Ocultar los links horizontalmente */
+  .nav-links {
+    position: absolute;
+    top: 30px; 
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.5); /* TRANSPARENTE elegante */
+    backdrop-filter: blur(6px);   /* efecto premium */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    /* Animación */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+
+  /* Links del menú */
+  .nav-links li a {
+    font-size: 18px;
+    padding: 10px 15px;
+    margin: 0;
+  }
+
+  /* Al activar: menú abre suavemente */
+  .nav-links.active {
+    padding: 20px 0;
+    max-height: 300px; /* suficiente para los items */
+  }
+
+  /* Mostrar hamburguesa */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding-right: 20px;
+  }
+
+  .hamburger span {
+    width: 28px;
+    margin-bottom: 5px;
+    height: 4px;
+    background: rgb(255, 255, 255);
+    transition: 0.3s;
+    margin-right: 20px;
+  }
+
+  .hamburger:hover span {
+    background: orange;
+    transition: 0.3s;
+  }
+
+  /* Redes siguen a la derecha */
+  .redes {
+    width: auto;
+  }
+
+}
+/*banner*/
+
+/* Banner contenedor */
+section.banner {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background-image: url(/assets/imagenes/PastelFruta.JPG);
+  background-size: cover ;
+  background-position: center;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+.text-container hr{
+  background-color:orange;
+  border: 0;
+  border-radius: 20px;
+  width: 30vw;
+  height: 3px;
+}
+.text-container h1 {
+  font-size: 5em;
+  margin: 0;
+  letter-spacing: 10px;
+}
+
+.text-container h2 {
+  font-size: 2em;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.text-container p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+section button{
+  background: transparent;
+  border: 3px solid orange;
+  padding: 10px 20px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 2px;
+  transition-duration: 0.2s;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+section button a{
+  text-decoration: none;
+  color: inherit;
+}
+
+section button:hover{
+    color:rgb(0, 0, 0);
+    transition-duration: 0.2s;
+    border-radius: 0;
+    background-color: orange;
+}
+
+.overlayBanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:  rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* GALERÍA IRREGULAR CON COLUMNS (Pinterest) */
+
+.galeriaProductos{
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.cuerpoGaleria{
+  width: 100%;
+  overflow-x: hidden;
+
+  /* Esto es lo que crea el efecto irregular */
+  column-count: 4;
+  column-gap: 15px;
+}
+
+/* IMPORTANTE: quita la grid, aquí NO va grid */
+.masorny-gallery{
+  display: block;
+}
+
+/* Cada item debe ser "inline-block" para funcionar bien con columns */
+.masonry-item{
+  width: 100%;
+  display: inline-block;
+  margin: 0 0 15px;          /* separación vertical */
+  break-inside: avoid;       /* evita cortes raros */
+  -webkit-column-break-inside: avoid;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+    /* animación entrada */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.masonry-item img{
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.masonry-item:hover img{
+  transform: scale(1.08);
+}
+
+.masonry-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* RESPONSIVE */
+@media (max-width: 1200px){
+  .cuerpoGaleria{ column-count: 3; }
+}
+
+@media (max-width: 900px){
+  .cuerpoGaleria{ column-count: 2; }
+}
+
+@media (max-width: 550px){
+  .cuerpoGaleria{ column-count: 1; }
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 15px;
+}
+
+/* Botones */
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.lightbox-close {
+  top: 20px;
+  right: 30px;
+}
+
+.lightbox-prev {
+  left: 30px;
+}
+
+.lightbox-next {
+  right: 30px;
+}
+
+.lightbox button:hover {
+  color: orange;
+}
+
+/* Lightbox móvil */
+@media (max-width: 768px) {
+  .lightbox-prev,
+  .lightbox-next {
+    font-size: 2rem;
+  }
+}
+/* ======== FOOTER ======== */
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 10%;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  z-index: 3;
+}
+
+/* Contenedor general */
+.footer-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+
+/* Logo y descripción */
+.footer-logo {
+  width: 140px;
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* Títulos */
+.footer-col h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: orange;
+  text-transform: uppercase;
+}
+
+/* Enlaces */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: orange;
+}
+
+/* Contacto */
+.footer-col i {
+  margin-right: 8px;
+  color:orange;
+}
+
+/* Redes sociales */
+.footer-redes {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 0;
+}
+
+.footer-redes img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+  margin-top: 15px;
+}
+
+.footer-redes img:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* Línea final */
+.footer-copy {
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: #777;
+}
+

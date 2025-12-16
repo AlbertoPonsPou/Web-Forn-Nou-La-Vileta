@@ -1,0 +1,56 @@
+CSS BANNER
+
+/* Carrusel de imágenes */
+.slides {
+  display: flex;
+  width: 400%;
+  height: 100%;
+  animation: slide 16s infinite;
+}
+
+/* Cada imagen ocupa 100% del ancho visible del banner */
+.slides img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animación */
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  20%  { transform: translateX(0%); }
+
+  25%  { transform: translateX(-100vw); }
+  45%  { transform: translateX(-100vw); }
+
+  50%  { transform: translateX(-200vw); }
+  70%  { transform: translateX(-200vw); }
+
+  75%  { transform: translateX(-300vw); }
+  95%  { transform: translateX(-300vw); }
+
+  100% { transform: translateX(0%); }
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:  rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+-----------------------------
+
+BANNER DIV
+
+
+        <div class="slides">
+            <img src="assets/imagenes/banner/carrousel1.jpg" alt="">
+            <img src="assets/imagenes/banner/carrousel2.jpg" alt="">
+            <img src="assets/imagenes/banner/carrousel3.jpg" alt="">
+            <img src="assets/imagenes/banner/carrousel4.jpg" alt="">
+        </div>

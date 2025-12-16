@@ -1,0 +1,1079 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: rgb(255, 255, 255);
+}
+a {
+  text-decoration: none;
+}
+h1{
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 2.5em;
+  margin-top: 2%;
+  padding: 0;
+  font-family: 'Source Serif 4', serif;
+}
+
+p, a, li, h3, h2, button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+/*Menu nav header*/
+
+nav {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    z-index: 4;
+    background: transparent;
+    position: absolute;
+    width: 80%;
+    margin-left: 10%;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    padding-left: 0%;
+}
+
+nav li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding:  10px 20PX;
+    display: inline-block;
+    z-index: 0;
+    transition: 0.5s;
+    margin: 10px;
+}
+
+nav li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: orange;
+  transform: scaleY(0.1);         
+  transform-origin: top;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+nav li a:hover::before {
+  transform: scaleY(1);           
+}
+
+nav li a:hover {
+    color: black;
+    transition: 0.3s;
+}
+
+.logo{
+  display: flex;
+  width: 150px;
+}
+
+.redes {
+  width: 150px;
+  display: flex;
+  gap: 20px;
+}
+
+.redes img {
+  width: 35px;
+  height: 35px;
+  transition: 0.2s;
+}
+
+.redes img:hover {
+  transition: 0.2s;
+  filter: brightness(1.2);
+}
+
+
+
+/* Comportamiento móvil */
+@media (max-width: 1200px) {
+
+  /* El nav ahora ocupa el 100% para que el menú baje desde arriba del todo */
+  nav {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Ocultar los links horizontalmente */
+  .nav-links {
+    position: absolute;
+    top: 30px; 
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.5); /* TRANSPARENTE elegante */
+    backdrop-filter: blur(6px);   /* efecto premium */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    /* Animación */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+
+  /* Links del menú */
+  .nav-links li a {
+    font-size: 18px;
+    padding: 10px 15px;
+    margin: 0;
+  }
+
+  /* Al activar: menú abre suavemente */
+  .nav-links.active {
+    padding: 20px 0;
+    max-height: 300px; /* suficiente para los items */
+  }
+
+  /* Mostrar hamburguesa */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding-right: 20px;
+  }
+
+  .hamburger span {
+    width: 28px;
+    margin-bottom: 5px;
+    height: 4px;
+    background: rgb(255, 255, 255);
+    transition: 0.3s;
+    margin-right: 20px;
+  }
+
+  .hamburger:hover span {
+    background: orange;
+    transition: 0.3s;
+  }
+
+  /* Redes siguen a la derecha */
+  .redes {
+    width: auto;
+  }
+
+}
+/*banner*/
+
+/* Banner contenedor */
+section.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover ;
+  background-position: center;
+  overflow: hidden;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 3;
+}
+
+.text-container h1 {
+  font-size: 5em;
+  margin: 0;
+  letter-spacing: 10px;
+}
+
+.text-container h2 {
+  font-size: 2em;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.text-container p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+section button{
+  background: transparent;
+  border: 3px solid orange;
+  padding: 10px 20px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 2px;
+  transition-duration: 0.2s;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+section button a{
+  text-decoration: none;
+  color: inherit;
+}
+
+section button:hover{
+    color:rgb(0, 0, 0);
+    transition-duration: 0.2s;
+    border-radius: 0;
+    background-color: orange;
+}
+
+.overlayBanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:  rgba(15, 17, 27, 0.7);
+  z-index: 1;
+}
+
+@media (max-width: 1200px) {
+  .text-container{
+    width: 85%;
+  }
+}
+
+@media(max-width: 768px) {
+  .text-container h1 {
+    font-size: 4em;
+  }
+
+  .text-container h2 {
+    font-size: 2em;
+  }
+
+  .text-container p {
+    font-size: 1.1em;
+  }
+}
+/* ❄❄ EFECTO DE NIEVE COMPLETO ❄❄ */
+
+/* Área donde cae la nieve */
+.snow-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* no bloquea el mouse */
+  overflow: hidden;
+  z-index: 2; /* encima del overlay y debajo del texto */
+}
+
+/* Contenedor que se mueve lateralmente */
+.flake-container {
+  position: absolute;
+  top: -10px; /* empieza justo arriba del banner */
+  animation: sway ease-in-out infinite;
+}
+
+/* Copo individual (solo cae verticalmente) */
+.snowflake {
+  position: absolute;
+  left: 0;
+  color: white;
+  user-select: none;
+  opacity: 0.9;
+  animation: fall linear infinite;
+}
+
+/* ANIMACIÓN: caída vertical  */
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh);
+  }
+  100% {
+    transform: translateY(110vh);
+  }
+}
+
+/* ANIMACIÓN: movimiento lateral */
+@keyframes sway {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(25px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.titulo-navidad {
+  position: relative;
+  display: inline-block;
+}
+
+.letra-gorro {
+  position: relative;
+  display: inline-block;
+}
+
+.gorro {
+  position: absolute;
+  top: -20px;      /* ✨ Ajusta según la altura del título */
+  left: -15px;     /* ✨ Ajusta para colocar el gorro encima de la letra */
+  width: 60px;     /* tamaño del gorrito */
+  transform: rotate(19deg); /* inclinación divertida */
+  pointer-events: none;
+}
+
+/* ✨ ANIMACIÓN DE ENTRADA SUAVE */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* cuando se activa desde JS */
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🎞 CARRUSEL DE FONDO */
+.banner-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.slidecarousel {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.slidecarousel.active {
+  opacity: 1;
+}
+
+/* ======== SECCIÓN DE PRODUCTOS ======== */
+.seccionProductos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 15vw;
+  gap: 40px;
+  width: 80%;
+  margin: 40px auto;
+}
+
+/* ======== TARJETA ======== */
+.producto {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ======== CONTENIDO ======== */
+.contenido {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 5px, 5px, 5px rgb(170, 170, 170);
+}
+
+/* 🎯 Fondo aislado en ::before (solo este hace zoom) */
+.contenido::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.4s ease, filter 0.35s ease;
+  z-index: 0;
+}
+
+/* ======== OVERLAY (gradiente oscuro) ======== */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5) 20%,
+    rgba(0, 0, 0, 0.1) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  opacity: 1;                   /* estado base */
+  transition: opacity 0.35s ease; /* ✅ animación suave */
+  z-index: 1;
+}
+
+/* ======== TEXTO ======== */
+.producto h3 {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+  padding: 10px;
+  border: 3px solid rgb(255, 255, 255);
+}
+
+/* ======== EFECTOS HOVER ======== */
+/* Fondo: zoom + ligero oscurecimiento */
+.producto:hover .contenido::before {
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
+
+
+/* Overlay: cambio de opacidad (suave) */
+.producto:hover .overlay {
+  opacity: 0; /* se oscurece ligeramente */
+  transition: 0.2s ease;
+}
+
+.producto:hover h3{
+  background: rgb(255, 255, 255);
+  text-shadow: none;
+  transition: 0.2s ease;
+  color: black;
+}
+
+/* ======== IMÁGENES DE FONDO ======== */
+.producto1 .contenido::before { background-image: url("/assets/imagenes/bollería/Pastel_de_manzana.webp"); }
+.producto2 .contenido::before { background-image: url("/assets/imagenes/panadería/pan_de_masa_madre.webp"); }
+.producto3 .contenido::before { background-image: url("/assets/imagenes/Pastelería/Pastel_maracuya_mini.webp"); }
+.producto4 .contenido::before { background-image: url("/assets/imagenes/salado/Focaccia.webp"); }
+.producto5 .contenido::before { background-image: url("/assets/imagenes/Pastelería/Turrones_y_monas_de_pascua.webp"); }
+.producto6 .contenido::before { background-image: url("/assets/imagenes/bollería/Roscón_de_reyes.webp"); }
+.producto7 .contenido::before { background-image: url("/assets/imagenes/Pastelería/buñuelos4.webp"); }
+.producto8 .contenido::before { background-image: url("/assets/imagenes/Pastelería/Pastel_de_san_valentín.webp"); }
+
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 1024px) {
+  .seccionProductos {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    width: 90%;
+  }
+  .producto{
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .seccionProductos {
+    grid-template-columns: repeat(1, 2fr);
+    grid-auto-rows: auto;
+    width: 90%;
+  }
+  .producto h3 {
+    font-size: 1.1rem;
+  }
+}
+
+
+.fade-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-item:nth-child(1) { transition-delay: 0.1s; }
+.fade-item:nth-child(2) { transition-delay: 0.2s; }
+.fade-item:nth-child(3) { transition-delay: 0.3s; }
+.fade-item:nth-child(4) { transition-delay: 0.4s; }
+.fade-item:nth-child(5) { transition-delay: 0.5s; }
+.fade-item:nth-child(6) { transition-delay: 0.6s; }
+.fade-item:nth-child(7) { transition-delay: 0.7s; }
+.fade-item:nth-child(8) { transition-delay: 0.8s; }
+
+/* =========================
+   DESTACADO NAVIDAD (FINAL)
+========================= */
+
+
+
+/*CLIENTES*/
+.SeccionClientes{
+    text-align: center;
+    color: rgb(46, 44, 42);
+    padding-top: 2%;
+}
+.SeccionClientes h1{
+    letter-spacing: 2px;
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.SeccionClientes img{
+  height: 150px;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  overflow: hidden; 
+  position: relative; 
+}
+
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+
+.carousel::before,
+.carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 400px; 
+  height: 100%;
+  z-index: 2;
+  pointer-events: none; 
+}
+
+.carousel::before {
+  left: 0;
+  background: linear-gradient(to right, white 10%, transparent 100%);
+}
+
+.carousel::after {
+  right: 0;
+  background: linear-gradient(to left, white 10%, transparent 100%);
+}
+
+.group {
+  flex: 0 0 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  animation: spin 20s linear infinite;
+  padding-right: 1em;
+}
+
+.card {
+  height: 8em;
+  padding: 1em;
+  text-align: center;
+  align-items: center;
+}
+
+.card img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+@keyframes spin {
+  from { translate: 0; }
+  to { translate: -100%; }
+}
+
+@media (max-width: 1700px) {
+
+  .carousel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .carousel::before {
+  left: 0;
+  background: transparent;
+}
+
+.carousel::after {
+  right: 0;
+  background: transparent
+}
+  .carousel {
+    width: 100%;
+  }
+}
+
+
+/*SOBRE NOSOSTROS*/
+/* =========================================================
+   SECCIÓN NUESTRA HISTORIA (DESKTOP)
+   ========================================================= */
+.nuestra-historia {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  padding: 50px 5%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* --- TEXTO --- */
+.texto-historia {
+  flex: 1;
+  min-width: 300px;
+}
+
+.texto-historia h3 {
+  color: gray;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.texto-historia h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;}
+
+.texto-historia .destacado {
+  color: orange;
+  font-weight: bold;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  background: #f8f2e9;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.tab.activa {
+  background: orange;
+  color: white;
+}
+
+.texto-tab {
+  display: none;
+}
+
+.texto-tab.activo {
+  display: block;
+}
+
+.texto-tab p {
+  line-height: 30px;
+}
+
+/* --- CARRUSEL (IMAGEN PRINCIPAL + MINIATURAS) --- */
+.carrusel {
+  flex: 1;
+  min-width: 300px;
+}
+
+.imagen-principal {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.imagen-principal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* MINIATURAS – versión táctil y responsive */
+.miniaturas {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  overflow-x: auto;                /* carrusel táctil */
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.miniaturas::-webkit-scrollbar {
+  display: none;
+}
+
+.miniaturas img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  flex-shrink: 0;                   /* evita aplastamiento en móvil */
+}
+
+.miniaturas img:hover {
+  border: 2px solid orange;
+}
+
+/* =========================================================
+   RESPONSIVE TABLET (<=1024px)
+   ========================================================= */
+@media (max-width: 1024px) {
+  .nuestra-historia {
+    flex-direction: column;         /* texto arriba, imágenes abajo */
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .imagen-principal {
+    height: 500px;
+  }
+
+  .tabs {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+    .texto-historia {
+    order: 1;
+  }
+
+  .carrusel {
+    order: 2;
+    width: 90%;
+    margin:auto;;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE MÓVIL (<=768px)
+   ========================================================= */
+@media (max-width: 768px) {
+
+  .texto-historia h1 {
+    font-size: 2rem;
+  }
+
+  .imagen-principal {
+    height: 280px;
+  }
+
+  .miniaturas img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .tab {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .miniaturas {
+    flex-wrap: nowrap;              /* carrusel horizontal */
+  }
+}
+  .carrusel {
+    width: 100%;
+  }
+
+/* =========================================================
+   RESPONSIVE MÓVIL PEQUEÑO (<=480px)
+   ========================================================= */
+@media (max-width: 480px) {
+
+  .texto-historia h1 {
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+
+  .imagen-principal {
+    height: 220px;
+  }
+
+  .miniaturas img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .tabs {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .tab {
+    width: 100%;
+    border-radius: 5px;
+  }
+}
+
+
+/* ============ PARALLAX CONTACTO ============ */
+.contacto-section {
+  position: relative;
+  background-image: url("/assets/imagenes/salado/Empanadas mini.webp");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 90px 5% 50px;
+  color: white;
+  overflow: hidden;
+}
+
+/* Capa oscura encima del parallax */
+.overlay-contact {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+/* Título superior */
+.titulo-contacto {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 2.5em;
+  color: white;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 10px black;
+}
+
+/* ============ CONTENEDOR INTERIOR ============ */
+.contacto-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 50px;
+  max-width: 1300px;
+  margin: auto;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ============ INFORMACIÓN ============ */
+.contacto-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contacto-info h2 {
+  color: orange;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.contacto-info p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.contacto-datos p {
+  margin: 8px 0;
+}
+
+/* ============ FORMULARIO ============ */
+.contacto-form {
+  flex: 1;
+  min-width: 300px;
+  padding: 25px;
+  border-radius: 15px;
+  
+  /* ❄ EFECTO GLASS */
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+}
+
+.contacto-form h3 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  color: white;
+}
+
+/* inputs */
+.contacto-form label {
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  width: 95%;
+  padding: 12px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  color: white;
+  font-size: 1em;
+}
+
+.contacto-form textarea {
+  height: 140px;
+  resize: none;
+}
+
+/* botón */
+.contacto-form button {
+  width: 100%;
+  padding: 14px;
+  background: orange;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: 0.25s;
+}
+
+.contacto-form button:hover {
+  background: #ffbb55;
+}
+
+/* ============ MAPA ============ */
+.contacto-section iframe {
+  width: 70%;
+  height: 350px;
+  border-radius: 20px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+  margin-left:15%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contacto-container {
+    flex-direction: column;
+  }
+}
+/* ======== FOOTER ======== */
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 10%;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  z-index: 3;
+}
+
+/* Contenedor general */
+.footer-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+
+/* Logo y descripción */
+.footer-logo {
+  width: 140px;
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* Títulos */
+.footer-col h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: orange;
+  text-transform: uppercase;
+}
+
+/* Enlaces */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: orange;
+}
+
+/* Contacto */
+.footer-col i {
+  margin-right: 8px;
+  color:orange;
+}
+
+/* Redes sociales */
+.footer-redes {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 0;
+}
+
+.footer-redes img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+  margin-top: 15px;
+}
+
+.footer-redes img:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* Línea final */
+.footer-copy {
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
