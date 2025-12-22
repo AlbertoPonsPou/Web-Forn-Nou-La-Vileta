@@ -1014,10 +1014,8 @@ section button:hover{
 @media (max-width: 900px) {
   .contacto-container {
     flex-direction: column;
-  }
-  .contacto-section iframe {
-    width: 98%;
-    margin-left:1%;
+    width: 80%;
+    margin-left: 10%;
   }
 }
 /* ======== FOOTER ======== */
