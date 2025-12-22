@@ -1,11 +1,15 @@
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
     margin-left: 0;
     margin-right: 0;
     background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    width: 100%;
+    margin-top: 0;
 }
 a {
   text-decoration: none;
@@ -25,6 +29,9 @@ p, a, li, h3, h2, button {
 }
 
 /*Menu nav header*/
+header{
+  margin-top: 0px;
+}
 
 nav {
     display: flex;
@@ -35,6 +42,7 @@ nav {
     position: absolute;
     width: 80%;
     margin-left: 10%;
+   
 }
 
 nav ul {
@@ -106,14 +114,17 @@ nav li a:hover {
 @media (max-width: 1200px) {
 
   /* El nav ahora ocupa el 100% para que el menú baje desde arriba del todo */
+  
   nav {
     width: 100%;
-    margin-left: 0;
-    padding: 0 20px;
+    margin-left: 0px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
 
+  .logo{
+    margin-left: 20px;
+  }
   /* Ocultar los links horizontalmente */
   .nav-links {
     position: absolute;
@@ -247,25 +258,6 @@ section button:hover{
   z-index: 1;
 }
 
-@media (max-width: 1200px) {
-  .text-container{
-    width: 85%;
-  }
-}
-
-@media(max-width: 768px) {
-  .text-container h1 {
-    font-size: 4em;
-  }
-
-  .text-container h2 {
-    font-size: 2em;
-  }
-
-  .text-container p {
-    font-size: 1.1em;
-  }
-}
 /* ❄❄ EFECTO DE NIEVE COMPLETO ❄❄ */
 
 /* Área donde cae la nieve */
@@ -372,6 +364,32 @@ section button:hover{
   opacity: 1;
 }
 
+@media (max-width: 1200px) {
+  .text-container{
+    width: 85%;
+  }
+}
+
+@media(max-width: 768px) {
+  .text-container h1 {
+    font-size: 2.7em;
+    width: 100%;
+  }
+
+  .text-container h2 {
+    font-size: 1.2em;
+  }
+
+  .text-container p {
+    font-size: 1em;
+  }
+
+  .gorro {
+    width: 40px; /* tamaño del gorrito */
+    top: -15px; /* ✨ Ajusta según la altura del título */
+    left: -10px; /* ✨ Ajusta para colocar el gorro encima de la letra */
+  }
+}
 /* ======== SECCIÓN DE PRODUCTOS ======== */
 .seccionProductos {
   display: grid;
@@ -494,7 +512,13 @@ section button:hover{
     width: 90%;
   }
   .producto h3 {
-    font-size: 1.1rem;
+    font-size: 1em;
+  }
+  h1{
+    font-size: 1.5em;
+  }
+  h3{
+    font-size: 0.8em;
   }
 }
 
@@ -629,6 +653,14 @@ section button:hover{
   }
 }
 
+@media (max-width: 768px) {
+  .SeccionClientes h1{
+    font-size: 2rem;
+  }
+  .SeccionClientes h2{
+    font-size: 1rem;
+  }
+}
 
 /*SOBRE NOSOSTROS*/
 /* =========================================================
@@ -845,7 +877,8 @@ section button:hover{
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  padding: 90px 5% 50px;
+  padding-top:20px;
+  padding-bottom: 20px;
   color: white;
   overflow: hidden;
 }
@@ -876,7 +909,7 @@ section button:hover{
   z-index: 2;
   display: flex;
   gap: 50px;
-  max-width: 1300px;
+  width: 80%;
   margin: auto;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -968,19 +1001,23 @@ section button:hover{
 
 /* ============ MAPA ============ */
 .contacto-section iframe {
-  width: 70%;
+  width: 80%;
   height: 350px;
   border-radius: 20px;
   margin-top: 50px;
   position: relative;
   z-index: 2;
-  margin-left:15%;
+  margin-left:10%;
 }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .contacto-container {
     flex-direction: column;
+  }
+  .contacto-section iframe {
+    width: 98%;
+    margin-left:1%;
   }
 }
 /* ======== FOOTER ======== */
