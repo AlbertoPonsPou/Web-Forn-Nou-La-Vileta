@@ -1,38 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const snowArea = document.getElementById("snow-area");
-  if (!snowArea) return;
 
-  const NUM_FLAKES = 120;
-
-  for (let i = 0; i < NUM_FLAKES; i++) {
-    // Contenedor lateral
-    const wrapper = document.createElement("div");
-    wrapper.classList.add("flake-container");
-
-    // Copo que cae
-    const flake = document.createElement("div");
-    flake.classList.add("snowflake");
-    flake.textContent = "❄";
-
-    const size = 10 + Math.random() * 16;
-    flake.style.fontSize = size + "px";
-
-    wrapper.style.left = Math.random() * 100 + "vw";
-
-    const fallDuration = 8 + Math.random() * 8;
-    const swayDuration = 3 + Math.random() * 4;
-
-    flake.style.animationDuration = `${fallDuration}s`;
-    wrapper.style.animationDuration = `${swayDuration}s`;
-
-    const delay = Math.random() * -20;
-    flake.style.animationDelay = `${delay}s`;
-    wrapper.style.animationDelay = `${delay}s`;
-
-    wrapper.appendChild(flake);
-    snowArea.appendChild(wrapper);
-  }
-});
 
 
 window.cambiarImagen = function(imagen) {

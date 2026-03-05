@@ -71,3 +71,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   items.forEach(item => observer.observe(item));
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const fadeItems = document.querySelectorAll('.fade-item');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // animate once only
+      }
+    });
+  }, { threshold: 0.2 }); // triggers when 20% visible
+
+  fadeItems.forEach(item => observer.observe(item));
+
+  const elements = document.querySelectorAll(".fade-up");
+
+  elements.forEach((el, i) => {
+    setTimeout(() => {
+      el.classList.add("show");
+    }, 300 + i * 250); // delay escalonado elegante
+  });
+});

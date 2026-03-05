@@ -258,78 +258,6 @@ section button:hover{
   z-index: 1;
 }
 
-/* ❄❄ EFECTO DE NIEVE COMPLETO ❄❄ */
-
-/* Área donde cae la nieve */
-.snow-area {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* no bloquea el mouse */
-  overflow: hidden;
-  z-index: 2; /* encima del overlay y debajo del texto */
-}
-
-/* Contenedor que se mueve lateralmente */
-.flake-container {
-  position: absolute;
-  top: -10px; /* empieza justo arriba del banner */
-  animation: sway ease-in-out infinite;
-}
-
-/* Copo individual (solo cae verticalmente) */
-.snowflake {
-  position: absolute;
-  left: 0;
-  color: white;
-  user-select: none;
-  opacity: 0.9;
-  animation: fall linear infinite;
-}
-
-/* ANIMACIÓN: caída vertical  */
-@keyframes fall {
-  0% {
-    transform: translateY(-10vh);
-  }
-  100% {
-    transform: translateY(110vh);
-  }
-}
-
-/* ANIMACIÓN: movimiento lateral */
-@keyframes sway {
-  0% {
-    transform: translateX(0px);
-  }
-  50% {
-    transform: translateX(25px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-}
-
-.titulo-navidad {
-  position: relative;
-  display: inline-block;
-}
-
-.letra-gorro {
-  position: relative;
-  display: inline-block;
-}
-
-.gorro {
-  position: absolute;
-  top: -20px;      /* ✨ Ajusta según la altura del título */
-  left: -15px;     /* ✨ Ajusta para colocar el gorro encima de la letra */
-  width: 60px;     /* tamaño del gorrito */
-  transform: rotate(19deg); /* inclinación divertida */
-  pointer-events: none;
-}
 
 /* ✨ ANIMACIÓN DE ENTRADA SUAVE */
 .fade-up {
@@ -384,11 +312,7 @@ section button:hover{
     font-size: 1em;
   }
 
-  .gorro {
-    width: 40px; /* tamaño del gorrito */
-    top: -15px; /* ✨ Ajusta según la altura del título */
-    left: -10px; /* ✨ Ajusta para colocar el gorro encima de la letra */
-  }
+
 }
 /* ======== SECCIÓN DE PRODUCTOS ======== */
 .seccionProductos {
@@ -483,14 +407,14 @@ section button:hover{
 }
 
 /* ======== IMÁGENES DE FONDO ======== */
-.producto1 .contenido::before { background-image: url("/assets/imagenes/bollería/Pastel_de_manzana.webp"); }
-.producto2 .contenido::before { background-image: url("/assets/imagenes/panadería/pan_de_masa_madre.webp"); }
-.producto3 .contenido::before { background-image: url("/assets/imagenes/Pastelería/Pastel_maracuya_mini.webp"); }
-.producto4 .contenido::before { background-image: url("/assets/imagenes/salado/Focaccia.webp"); }
-.producto5 .contenido::before { background-image: url("/assets/imagenes/Pastelería/Turrones_y_monas_de_pascua.webp"); }
-.producto6 .contenido::before { background-image: url("/assets/imagenes/bollería/Roscón_de_reyes.webp"); }
-.producto7 .contenido::before { background-image: url("/assets/imagenes/Pastelería/buñuelos4.webp"); }
-.producto8 .contenido::before { background-image: url("/assets/imagenes/Pastelería/Pastel_de_san_valentín.webp"); }
+.producto1 .contenido::before { background-image: url("/assets/imagenes/pequeñas/Pastel_de_manzana.webp"); }
+.producto2 .contenido::before { background-image: url("/assets/imagenes/pequeñas/pan_de_masa_madre.webp"); }
+.producto3 .contenido::before { background-image: url("/assets/imagenes/pequeñas/Pastel_maracuya_mini.webp"); }
+.producto4 .contenido::before { background-image: url("/assets/imagenes/pequeñas/Coca\ de\ trampo\ con\ sobrasada.webp"); }
+.producto5 .contenido::before { background-image: url("/assets/imagenes/pequeñas/Turrones_y_monas_de_pascua.webp"); }
+.producto6 .contenido::before { background-image: url("/assets/imagenes/pequeñas/Roscón_de_reyes.webp"); }
+.producto7 .contenido::before { background-image: url("/assets/imagenes/pequeñas/buñuelos4.webp"); }
+.producto8 .contenido::before { background-image: url("/assets/imagenes/pequeñas/tartas_sanvalentin.webp"); }
 
 
 /* ======== RESPONSIVE ======== */

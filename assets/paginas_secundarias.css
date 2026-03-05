@@ -9,6 +9,7 @@ body {
     margin-left: 0;
     margin-right: 0;
     background-color: rgb(255, 255, 255);
+    margin-top: 0;
 }
 
 h1{
@@ -25,6 +26,9 @@ p, a, li, h3, h2, button {
   font-weight: 300;
 }
 /*Menu nav header*/
+header{
+  margin-top: 0px;
+}
 
 nav {
     display: flex;
@@ -35,6 +39,7 @@ nav {
     position: absolute;
     width: 80%;
     margin-left: 10%;
+   
 }
 
 nav ul {
@@ -100,18 +105,23 @@ nav li a:hover {
   filter: brightness(1.2);
 }
 
+
+
 /* Comportamiento móvil */
 @media (max-width: 1200px) {
 
   /* El nav ahora ocupa el 100% para que el menú baje desde arriba del todo */
+  
   nav {
     width: 100%;
-    margin-left: 0;
-    padding: 0 20px;
+    margin-left: 0px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
 
+  .logo{
+    margin-left: 20px;
+  }
   /* Ocultar los links horizontalmente */
   .nav-links {
     position: absolute;
@@ -172,16 +182,18 @@ nav li a:hover {
   }
 
 }
+
 /*banner*/
 
 /* Banner contenedor */
 section.banner {
   position: relative;
   width: 100%;
-  height: 70vh;
-  background-image: url(/assets/imagenes/PastelFruta.JPG);
+  height: 60vh;
   background-size: cover ;
   background-position: center;
+  overflow: hidden;
+  background-image:url(/assets/imagenes/Pastelería/PastelFruta.webp);
 }
 
 .text-container {
@@ -191,15 +203,9 @@ section.banner {
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  z-index: 2;
+  z-index: 3;
 }
-.text-container hr{
-  background-color:orange;
-  border: 0;
-  border-radius: 20px;
-  width: 30vw;
-  height: 3px;
-}
+
 .text-container h1 {
   font-size: 5em;
   margin: 0;
@@ -247,10 +253,51 @@ section button:hover{
   left: 0;
   width: 100%;
   height: 100%;
-  background:  rgba(0, 0, 0, 0.7);
+  background:  rgba(15, 17, 27, 0.7);
   z-index: 1;
 }
 
+
+/* ✨ ANIMACIÓN DE ENTRADA SUAVE */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* cuando se activa desde JS */
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.destacado {
+  color: orange;
+  display: inline-block;
+}
+
+@media (max-width: 1200px) {
+  .text-container{
+    width: 85%;
+  }
+}
+
+@media(max-width: 768px) {
+  .text-container h1 {
+    font-size: 2.7em;
+  }
+  .h1 span{
+    display: block;
+  }
+
+  .text-container h2 {
+    font-size: 1.2em;
+  }
+
+  .text-container p {
+    font-size: 1em;
+  }
+}
 /* GALERÍA IRREGULAR CON COLUMNS (Pinterest) */
 
 .galeriaProductos{
