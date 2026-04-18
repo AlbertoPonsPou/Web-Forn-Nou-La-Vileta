@@ -229,11 +229,9 @@
                 </div>
             </div>
 
-            <!-- FORMULARIO -->
             <form 
                 class="contacto-form" 
-                action="https://formspree.io/f/xzdyrlpj" 
-                method="POST"
+                id="contactoForm"
             >
                 <h3>Envíanos un mensaje</h3>
 
@@ -263,26 +261,10 @@
                     required
                 ></textarea>
 
-                <!-- Asunto del email -->
-                <input 
-                    type="hidden" 
-                    name="_subject" 
-                    value="Nuevo mensaje desde Forn Nou"
-                >
-
-                <!-- Anti-spam básico -->
-                <input 
-                    type="text" 
-                    name="_honey" 
-                    style="display:none"
-                >
-
                 <button type="submit">Enviar</button>
 
                 <p id="respuesta"></p>
             </form>
-        </div>
-
         <!-- MAPA -->
         <iframe 
             src="https://www.google.com/maps/d/embed?mid=14lTXInukUN8q-SF3s00sh5MxKwZ9TAw&ehbc=2E312F&noprof=1"
