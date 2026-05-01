@@ -837,12 +837,19 @@ section button:hover{
   margin: auto;
   align-items: flex-start;
   flex-wrap: wrap;
+      /* ❄ EFECTO GLASS */
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+
 }
 
 /* ============ INFORMACIÓN ============ */
 .contacto-info {
   flex: 1;
   min-width: 280px;
+  padding: 25px;
 }
 
 .contacto-info h2 {
@@ -865,13 +872,11 @@ section button:hover{
   flex: 1;
   min-width: 300px;
   padding: 25px;
-  border-radius: 15px;
-  
-  /* ❄ EFECTO GLASS */
-  background: rgba(255,255,255,0.12);
+      /* ❄ EFECTO GLASS */
+  background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
   backdrop-filter: blur(8px);
-
   box-shadow: 0 4px 25px rgba(0,0,0,0.4);
 }
 
@@ -926,12 +931,12 @@ section button:hover{
 /* ============ MAPA ============ */
 .contacto-section iframe {
   width: 80%;
-  height: 350px;
+  height: 450px;
   border-radius: 20px;
   margin-top: 50px;
   position: relative;
   z-index: 2;
-  margin-left:10%;
+  margin-left: 10%;
 }
 
 /* RESPONSIVE */

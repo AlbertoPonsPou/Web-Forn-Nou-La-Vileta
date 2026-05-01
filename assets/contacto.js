@@ -32,3 +32,4 @@ form.addEventListener("submit", async (e) => {
     respuesta.textContent = "❌ Error de conexión";
   }
 });
+
