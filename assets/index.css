@@ -315,7 +315,10 @@ nav li a:hover {
   /* Al activar: menú abre suavemente */
   .nav-links.active {
     padding: 20px 0;
-    max-height: 300px; /* suficiente para los items */
+    max-height: calc(100vh - 66px);
+    max-height: calc(100dvh - 66px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     visibility: visible;
   }
 
