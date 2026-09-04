@@ -11,13 +11,13 @@
     const style = document.createElement("style");
     style.id = "cookie-consent-styles";
     style.textContent = `
-      .cookie-banner{position:fixed;z-index:9999;right:18px;bottom:18px;width:min(520px,calc(100% - 36px));padding:22px;background:#17130f;color:#fff;border:1px solid #4c4035;border-radius:16px;box-shadow:0 18px 55px rgba(0,0,0,.35);font-family:Poppins,Arial,sans-serif}
+      .cookie-banner{box-sizing:border-box;position:fixed;z-index:9999;right:18px;bottom:18px;width:min(520px,calc(100% - 36px));padding:22px;background:#17130f;color:#fff;border:1px solid #4c4035;border-radius:16px;box-shadow:0 18px 55px rgba(0,0,0,.35);font-family:Poppins,Arial,sans-serif}
       .cookie-banner[hidden]{display:none}
       .cookie-banner h2{margin:0 0 8px;color:#ffbc58;font-size:1.2rem}
       .cookie-banner p{margin:0 0 16px;line-height:1.55;font-size:.92rem}
       .cookie-banner a{color:#ffd79b;text-underline-offset:3px}
       .cookie-actions{display:flex;flex-wrap:wrap;gap:10px}
-      .cookie-actions button,.cookie-map-placeholder button{min-height:44px;padding:10px 16px;border:2px solid #f39c12;border-radius:8px;font:500 .9rem Poppins,Arial,sans-serif;cursor:pointer}
+      .cookie-actions button,.cookie-map-placeholder button{box-sizing:border-box;min-height:44px;padding:10px 16px;border:2px solid #f39c12;border-radius:8px;font:500 .9rem Poppins,Arial,sans-serif;cursor:pointer}
       .cookie-accept{background:#f39c12;color:#17130f}
       .cookie-reject{background:transparent;color:#fff}
       .cookie-settings{padding:0;border:0;background:none;color:inherit;font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
@@ -30,7 +30,7 @@
       .footer-legal{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 18px;margin-top:0}
       .footer-legal a,.footer-legal .cookie-settings{color:#b9a99d;font-size:.82rem}
       .footer-legal a:hover,.footer-legal .cookie-settings:hover{color:#ffc266}
-      @media(max-width:600px){.cookie-banner{right:10px;bottom:10px;width:calc(100% - 20px);padding:18px}.cookie-actions{flex-direction:column}.cookie-actions button{width:100%}.cookie-map-placeholder{width:100%;min-height:260px;margin-top:24px;padding:24px 18px}.footer-legal{justify-content:flex-start}}
+      @media(max-width:600px){.cookie-banner{left:10px;right:10px;bottom:10px;width:auto;padding:18px}.cookie-actions{flex-direction:column}.cookie-actions button{width:100%}.cookie-map-placeholder{box-sizing:border-box;width:100%;min-height:260px;margin-top:24px;padding:24px 18px}.footer-legal{justify-content:flex-start}}
     `;
     document.head.appendChild(style);
   }

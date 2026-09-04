@@ -37,6 +37,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -47,6 +48,7 @@ body {
     font-weight: 400;
     overflow-x: hidden;
     width: 100%;
+    max-width: 100%;
     margin-top: 0;
 }
 
@@ -220,6 +222,7 @@ nav li a:hover {
 .header-call summary:hover { background: #ffb83f; transform: translateY(-1px); }
 
 .header-call-menu {
+  box-sizing: border-box;
   position: absolute;
   top: calc(100% + 10px);
   right: 0;
@@ -268,21 +271,27 @@ nav li a:hover {
   /* El nav ahora ocupa el 100% para que el menú baje desde arriba del todo */
   
   nav {
-    width: 100%;
-    margin-left: 0px;
+    left: 0;
+    right: 0;
+    width: auto;
+    box-sizing: border-box;
+    margin-left: 0;
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-inline: 20px;
   }
 
   .logo{
-    margin-left: 20px;
+    margin-left: 0;
   }
   /* Ocultar los links horizontalmente */
   .nav-links {
     position: absolute;
     top: 30px; 
     left: 0;
-    width: 100%;
+    right: 0;
+    width: auto;
+    box-sizing: border-box;
     background: rgba(0,0,0,0.5); /* TRANSPARENTE elegante */
     backdrop-filter: blur(6px);   /* efecto premium */
     flex-direction: column;
@@ -316,7 +325,7 @@ nav li a:hover {
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-    padding-right: 20px;
+    padding-right: 0;
   }
 
   .hamburger span {
@@ -325,7 +334,7 @@ nav li a:hover {
     height: 4px;
     background: rgb(255, 255, 255);
     transition: 0.3s;
-    margin-right: 20px;
+    margin-right: 0;
   }
 
   .hamburger:hover span {
@@ -343,14 +352,12 @@ nav li a:hover {
 @media (max-width: 700px) {
   .redes > a { display: none; }
   .redes { gap: 12px; }
-  .header-call-menu { right: -48px; }
+  .header-call-menu { right: 0; width: min(238px, calc(100vw - 24px)); }
 }
 
 @media (max-width: 520px) {
   .logo { width: 128px; }
   .header-call summary { min-height: 40px; padding: 8px 12px; }
-  .hamburger { padding-right: 0; }
-  .hamburger span { margin-right: 0; }
 }
 /*banner*/
 
